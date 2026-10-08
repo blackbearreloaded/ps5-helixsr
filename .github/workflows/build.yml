@@ -1,0 +1,52 @@
+# Copyright (C) 2026 BlackBearReloaded
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# Checks what needs nothing of NVIDIA's: the planner, the numerics, the contracts, the
+# showcase's tables, and the shaders written here. The network itself is built only on a
+# developer's machine from NVIDIA's DLSS DLL (BUILDING.md); this workflow never fetches it
+# and builds no title. Runs on pull requests and when started by hand.
+name: Build
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    # The toolchain the project is developed with: the same glslang and SPIRV-Tools releases.
+    container: ubuntu:26.04
+    timeout-minutes: 30
+    steps:
+      - name: Install build tools
+        run: |
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+            build-essential ca-certificates cmake git glslang-tools make python3 python3-numpy \
+            python3-pil spirv-tools fonts-dejavu-core
+          git config --global --add safe.directory '*'
+
+      - uses: actions/checkout@v7
+
+      - name: Tools compile
+        run: python3 -m compileall -q tools tests
+
+      - name: Host tests without the model
+        run: make check-offline
+
+      - name: Shaders written here
+        run: make check-shaders
+
+      - name: The showcase's signs and chart
+        run: |
+          python3 tools/showcase_signs.py /tmp/signs.bin
+          test "$(stat -c %s /tmp/signs.bin)" = 8388608
+          python3 tools/build_perf_charts.py
+          git diff --exit-code docs/perf

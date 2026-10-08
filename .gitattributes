@@ -1,0 +1,4 @@
+# Vendored source hashes describe exact release bytes, including line endings.
+third_party/** -text
+# Unified diffs require one prefix character on blank context lines.
+*.patch -whitespace

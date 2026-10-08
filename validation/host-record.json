@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "cases": [
+    {
+      "name": "below-1.5",
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "fixture_sha256": "3b1c56c5d64e521c038b5bbf45ffa44afa12788acfe2a1275361f8c79946c018",
+      "result": "success",
+      "device": "llvmpipe (LLVM 21.1.8, 256 bits)",
+      "resources": 25,
+      "pipelines": 17,
+      "descriptor_sets": 22,
+      "dispatches": 22,
+      "barriers": 24,
+      "submitted": false,
+      "execution_qualified": false
+    },
+    {
+      "name": "middle",
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "fixture_sha256": "79c236797dd8a78d0a3390e6d49e9ebdd6da56062986c151254c505140498b1f",
+      "result": "success",
+      "device": "llvmpipe (LLVM 21.1.8, 256 bits)",
+      "resources": 25,
+      "pipelines": 17,
+      "descriptor_sets": 22,
+      "dispatches": 22,
+      "barriers": 24,
+      "submitted": false,
+      "execution_qualified": false
+    },
+    {
+      "name": "high",
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "fixture_sha256": "7e57092f2964a41fcaf1cccb4bedb9b4ad21e5f226f3f1cad6219cb821064bd0",
+      "result": "success",
+      "device": "llvmpipe (LLVM 21.1.8, 256 bits)",
+      "resources": 25,
+      "pipelines": 17,
+      "descriptor_sets": 22,
+      "dispatches": 22,
+      "barriers": 24,
+      "submitted": false,
+      "execution_qualified": false
+    }
+  ],
+  "actual_vulkan_objects": true,
+  "actual_command_buffer": true,
+  "submitted": false,
+  "execution_qualified": false,
+  "scope": "host Vulkan resource, pipeline, descriptor and command-buffer creation; no dispatch execution"
+}

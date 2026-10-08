@@ -1,0 +1,116 @@
+--- a/src/gallium/drivers/llvmpipe/lp_state_cs.c	2026-09-28 01:49:30.001289893 -0400
++++ b/src/gallium/drivers/llvmpipe/lp_state_cs.c	2026-10-08 13:20:07.734931129 -0400
+@@ -339,7 +339,7 @@
+    cs_type.sign = true;          /* values are signed */
+    cs_type.norm = false;         /* values are not limited to [0,1] or [-1,1] */
+    cs_type.width = 32;           /* 32-bit float */
+-   cs_type.length = MIN2(lp_native_vector_width / 32, 16); /* n*4 elements per vector */
++   cs_type.length = MIN2(lp_native_vector_width / 32, 32); /* n*4 elements per vector */
+    snprintf(func_name, sizeof(func_name), "cs_variant");
+ 
+    snprintf(func_name_coro, sizeof(func_name), "cs_co_variant");
+--- a/src/gallium/drivers/llvmpipe/lp_texture_handle.c	2026-09-28 01:49:30.001289893 -0400
++++ b/src/gallium/drivers/llvmpipe/lp_texture_handle.c	2026-10-08 13:20:07.738565344 -0400
+@@ -399,7 +399,7 @@
+    type.sign = true;          /* values are signed */
+    type.norm = false;         /* values are not limited to [0,1] or [-1,1] */
+    type.width = 32;           /* 32-bit float */
+-   type.length = MIN2(lp_native_vector_width / 32, 16); /* n*4 elements per vector */
++   type.length = MIN2(lp_native_vector_width / 32, 32); /* n*4 elements per vector */
+ 
+    struct lp_compute_shader_variant_jit cs = { 0 };
+    lp_jit_init_cs_types(gallivm, &cs);
+@@ -558,7 +558,7 @@
+    type.sign = true;          /* values are signed */
+    type.norm = false;         /* values are not limited to [0,1] or [-1,1] */
+    type.width = 32;           /* 32-bit float */
+-   type.length = MIN2(lp_native_vector_width / 32, 16); /* n*4 elements per vector */
++   type.length = MIN2(lp_native_vector_width / 32, 32); /* n*4 elements per vector */
+ 
+    struct lp_compute_shader_variant_jit cs = { 0 };
+    lp_jit_init_cs_types(gallivm, &cs);
+@@ -668,7 +668,7 @@
+    type.sign = true;          /* values are signed */
+    type.norm = false;         /* values are not limited to [0,1] or [-1,1] */
+    type.width = 32;           /* 32-bit float */
+-   type.length = MIN2(lp_native_vector_width / 32, 16); /* n*4 elements per vector */
++   type.length = MIN2(lp_native_vector_width / 32, 32); /* n*4 elements per vector */
+ 
+    struct lp_compute_shader_variant_jit cs = { 0 };
+    lp_jit_init_cs_types(gallivm, &cs);
+@@ -889,7 +889,7 @@
+    type.sign = true;          /* values are signed */
+    type.norm = false;         /* values are not limited to [0,1] or [-1,1] */
+    type.width = 32;           /* 32-bit float */
+-   type.length = MIN2(lp_native_vector_width / 32, 16); /* n*4 elements per vector */
++   type.length = MIN2(lp_native_vector_width / 32, 32); /* n*4 elements per vector */
+ 
+    struct lp_compute_shader_variant_jit cs = { 0 };
+    lp_jit_init_cs_types(gallivm, &cs);
+@@ -1010,7 +1010,7 @@
+    type.sign = true;          /* values are signed */
+    type.norm = false;         /* values are not limited to [0,1] or [-1,1] */
+    type.width = 32;           /* 32-bit float */
+-   type.length = MIN2(lp_native_vector_width / 32, 16); /* n*4 elements per vector */
++   type.length = MIN2(lp_native_vector_width / 32, 32); /* n*4 elements per vector */
+ 
+    struct lp_compute_shader_variant_jit cs = { 0 };
+    lp_jit_init_cs_types(gallivm, &cs);
+@@ -1129,7 +1129,7 @@
+    type.sign = true;          /* values are signed */
+    type.norm = false;         /* values are not limited to [0,1] or [-1,1] */
+    type.width = 32;           /* 32-bit float */
+-   type.length = MIN2(lp_native_vector_width / 32, 16); /* n*4 elements per vector */
++   type.length = MIN2(lp_native_vector_width / 32, 32); /* n*4 elements per vector */
+ 
+    struct lp_compute_shader_variant_jit cs = { 0 };
+    lp_jit_init_cs_types(gallivm, &cs);
+--- a/src/gallium/auxiliary/gallivm/lp_bld_jit_types.c	2026-09-28 01:49:29.902282905 -0400
++++ b/src/gallium/auxiliary/gallivm/lp_bld_jit_types.c	2026-10-08 13:25:33.478356320 -0400
+@@ -840,7 +840,7 @@
+    type.sign = true;          /* values are signed */
+    type.norm = false;         /* values are not limited to [0,1] or [-1,1] */
+    type.width = 32;           /* 32-bit float */
+-   type.length = MIN2(lp_native_vector_width / 32, 16); /* n*4 elements per vector */
++   type.length = MIN2(lp_native_vector_width / 32, 32); /* n*4 elements per vector */
+ 
+    enum lp_sampler_op_type op_type = (sample_key & LP_SAMPLER_OP_TYPE_MASK) >> LP_SAMPLER_OP_TYPE_SHIFT;
+    enum lp_sampler_lod_control lod_control = (sample_key & LP_SAMPLER_LOD_CONTROL_MASK) >> LP_SAMPLER_LOD_CONTROL_SHIFT;
+@@ -902,7 +902,7 @@
+    type.sign = true;          /* values are signed */
+    type.norm = false;         /* values are not limited to [0,1] or [-1,1] */
+    type.width = 32;           /* 32-bit float */
+-   type.length = MIN2(lp_native_vector_width / 32, 16); /* n*4 elements per vector */
++   type.length = MIN2(lp_native_vector_width / 32, 32); /* n*4 elements per vector */
+ 
+    LLVMTypeRef arg_types[LP_MAX_TEX_FUNC_ARGS];
+    LLVMTypeRef ret_type;
+@@ -928,7 +928,7 @@
+    type.sign = true;          /* values are signed */
+    type.norm = false;         /* values are not limited to [0,1] or [-1,1] */
+    type.width = 32;           /* 32-bit float */
+-   type.length = MIN2(lp_native_vector_width / 32, 16); /* n*4 elements per vector */
++   type.length = MIN2(lp_native_vector_width / 32, 32); /* n*4 elements per vector */
+ 
+    enum pipe_format format = params->format;
+    if (is64 && format == PIPE_FORMAT_NONE)
+@@ -951,7 +951,7 @@
+    type.sign = true;          /* values are signed */
+    type.norm = false;         /* values are not limited to [0,1] or [-1,1] */
+    type.width = 32;           /* 32-bit float */
+-   type.length = MIN2(lp_native_vector_width / 32, 16); /* n*4 elements per vector */
++   type.length = MIN2(lp_native_vector_width / 32, 32); /* n*4 elements per vector */
+ 
+    LLVMTypeRef arg_types[LP_MAX_TEX_FUNC_ARGS];
+    LLVMTypeRef ret_type;
+--- a/src/gallium/auxiliary/gallivm/lp_bld_type.h	2026-09-28 01:49:29.905289889 -0400
++++ b/src/gallium/auxiliary/gallivm/lp_bld_type.h	2026-10-08 13:20:07.741491581 -0400
+@@ -59,7 +59,7 @@
+  * Should only be used when lp_native_vector_width isn't available,
+  * i.e. sizing/alignment of non-malloced variables.
+  */
+-#define LP_MAX_VECTOR_WIDTH 512
++#define LP_MAX_VECTOR_WIDTH 1024
+ 
+ /**
+  * Minimum vector alignment for static variable alignment

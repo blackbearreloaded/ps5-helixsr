@@ -1,0 +1,46 @@
+#version 460
+// Lane-by-lane operations the network kernels rely on; the output must not depend
+// on the subgroup width of the driver (tools/host_driver_check.cpp).
+#extension GL_EXT_samplerless_texture_functions : require
+#extension GL_EXT_shader_explicit_arithmetic_types : require
+layout(local_size_x = 128) in;
+layout(set = 0, binding = 0) uniform texture2D source;
+layout(set = 0, binding = 1) uniform sampler linear_sampler;
+layout(set = 0, binding = 2) uniform sampler point_sampler;
+layout(set = 0, binding = 3, rgba16f) uniform writeonly image2D target;
+layout(set = 0, binding = 4) buffer Result { vec4 value[]; } result;
+// 32-bit patterns carried through shared memory as pairs of halves, as the kernels do
+shared f16vec2 tile[256];
+
+uint pattern(uint k) {
+    uint h = k * 2654435761u;
+    // every sixth word is a small value whose halves are denormal or not-a-number patterns
+    return (k % 6u == 5u) ? (h & 0x03ff83ffu) | ((k & 8u) != 0u ? 0x7c000000u : 0u) : h;
+}
+
+void main() {
+    uint i = gl_GlobalInvocationID.x;
+    uint t = gl_LocalInvocationID.x;
+    for (uint k = t; k < 256u; k += 128u) {
+        uint w = pattern(k + gl_WorkGroupID.x * 1000u);
+        tile[k] = uint16BitsToFloat16(u16vec2(uint16_t(w & 0xffffu), uint16_t(w >> 16u)));
+    }
+    barrier();
+    u16vec2 back = float16BitsToUint16(tile[(t * 37u + 11u) & 255u]);
+    uint carried = uint(back.x) | (uint(back.y) << 16u);
+    vec2 size = vec2(textureSize(source, 0));
+    // irregular positions, a different one per lane
+    vec2 uv = vec2(fract(float(i) * 0.37 + 0.11), fract(float(i) * 0.193 + 0.27));
+    vec4 a = textureLod(sampler2D(source, linear_sampler), uv, 0.0);
+    vec4 b = textureLod(sampler2D(source, point_sampler), uv, 0.0);
+    vec4 c = texelFetch(source, ivec2(uv * size), 0);
+    // per-lane level of detail on a single-level image must not change the result
+    vec4 d = textureLod(sampler2D(source, linear_sampler), uv.yx, float(i & 3u) * 0.25);
+    float16_t h = float16_t(a.x) * float16_t(1.37) + float16_t(b.y);
+    result.value[i * 5u + 0u] = a;
+    result.value[i * 5u + 1u] = b;
+    result.value[i * 5u + 2u] = c;
+    result.value[i * 5u + 3u] = d;
+    result.value[i * 5u + 4u] = vec4(float(h), float(uint(uint16_t(i * 2654435761u >> 16u))), uintBitsToFloat(carried), 1.0);
+    imageStore(target, ivec2(i % 64u, i / 64u), a + d);
+}

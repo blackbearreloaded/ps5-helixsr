@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "asset_count": 19,
+  "total_spirv_bytes": 6512432,
+  "shaders": [
+    {
+      "name": "auto_exposure_copy",
+      "sha256": "7b2ff2837de813d8dc683d34155d533c8244c260368cfa81122aba955af296d8",
+      "kinds": "UBW",
+      "bytes": 1492,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "conv_128_128_k3_half",
+      "sha256": "d0eb5fa665d2e5e17238380ba4ee8a92f9fcd558e749589c504466e3eba4134f",
+      "kinds": "UBBBB",
+      "bytes": 126336,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "conv_128_256_k3_half",
+      "sha256": "569ea52912bd00314337dd9b910d0ac890ae61170d60915f1efe8b0e57fca4dc",
+      "kinds": "UBBBB",
+      "bytes": 126352,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "conv_16_32_k3_half",
+      "sha256": "fc44c2c7edc5b2b5e4e5ae824e22ac1e6e06eeee2e885bc5d7135853580d8039",
+      "kinds": "UBBBB",
+      "bytes": 126288,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "conv_32_64_k1_half",
+      "sha256": "6226fd5a64c4e682d6e3e23c7ad7d11aa5c37c68fc0d49762d27a2163d81efc9",
+      "kinds": "UBBBB",
+      "bytes": 126064,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "conv_64_128_k3_e5",
+      "sha256": "f51e075ef5a8adf6fbd519e41ddc30220b169309a90389098a36099266ce5215",
+      "kinds": "UBBBB",
+      "bytes": 127056,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "copy_exposure",
+      "sha256": "418c57cc18f35d31cdb3546a508d43145fa3401d7f959e2b7e6b6276823258cc",
+      "kinds": "UISW",
+      "bytes": 948,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "encode_e5m3_resident",
+      "sha256": "9cda82abb16e46ceaab2b9d983ea913aed8f9e683191efa0e4d8a0a297f16b4c",
+      "kinds": "UBB",
+      "bytes": 13412,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "k10",
+      "sha256": "e30757cd3bea14671b436d3811e96dedd29e7094bb9356c4fdbfba93adf33051",
+      "kinds": "UBBBBBBB",
+      "bytes": 506300,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "k11",
+      "sha256": "fe606e17f9db11beeb35e28e489fb8aa5e76aaed6e27670a5e9f097a30b13b35",
+      "kinds": "UBBBB",
+      "bytes": 55664,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "k4",
+      "sha256": "0ae3120df15fae2050f9bc0cd062e7378d782432e73c7defa73338b89525be2a",
+      "kinds": "UBBBBBBB",
+      "bytes": 240148,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "k5",
+      "sha256": "9dde5d530a26040c96bfac2c19d834acd7dab0e9b550aec41632dc9759ca509f",
+      "kinds": "UBBBBBBISIIWW",
+      "bytes": 394176,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "k5f",
+      "sha256": "b8b5762889549e415691348c3dacd59800132a46df3c017645e863cdbc0c5757",
+      "kinds": "UBBBBBBISIIWW",
+      "bytes": 387268,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "k5n",
+      "sha256": "93dd3be324ed5896898af24bba4317c152a7aa97ccbbc1664e599008c53da2fa",
+      "kinds": "UBBBBBBISIIWW",
+      "bytes": 3422784,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "k7",
+      "sha256": "2e94f5565ec36d5f44a04f2a6d1666da1483a6e1e69db8e7154f70dd95acef8f",
+      "kinds": "UBBBBB",
+      "bytes": 352696,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "k8_hdr_mvdiff_mvlo",
+      "sha256": "6311dc10fab882c1f4bfaf83314608dd79f21402e5cbb24c1b64bd27da5cdb8c",
+      "kinds": "UISISISIIIISISBWWW",
+      "bytes": 157096,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "k9",
+      "sha256": "f4fb5af74eb1ccc6cc3faba54e6d9abbe2bfa0cdbbcecd17d8b1f6beb22ede01",
+      "kinds": "UBBBBBBB",
+      "bytes": 337700,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "luma_convert",
+      "sha256": "c7a31f892fa6ae13be060280c7b737b3782efccd95585db390244546c84ef6ee",
+      "kinds": "UIB",
+      "bytes": 4232,
+      "required_subgroup_size": 32
+    },
+    {
+      "name": "reduce_sum",
+      "sha256": "dd208cb969aca7a3ce97fa6858aebc88afc3a3cbd45735d2b85d781726207821",
+      "kinds": "UBB",
+      "bytes": 6420,
+      "required_subgroup_size": 32
+    }
+  ],
+  "payloads_committed": false
+}

@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "helixsr": {
+    "version": "1.2.0",
+    "release": "https://github.com/lonewolf0622/HelixSR/releases/tag/v1.2.0",
+    "archive_sha256": "7c9aeac2e3dcd73f6e9b2dd8b04c41a828fd8e1a8fe30a2ac77787097ddbeb0e",
+    "files": {
+      "third_party/helixsr/model/model.h": "6017a9d8f67591b2db159b266d102a9f249c627274135e6debbb312bfee5991f",
+      "third_party/helixsr/model/model.cpp": "7825fe4d9e3d7f2dc453b5118812c00c6424f27a84d20e1282187fafd399a984",
+      "third_party/helixsr/model/model_gen.inc": "eb371a4fd7309196a3b1b6ca8db577642088ace5f1f6257e2fe7fa3170179a63",
+      "third_party/helixsr/kernels.py": "617c1c09499c65720feb6c840cd4eac090e991adb275f05d957a6f7ac95a76a6",
+      "third_party/helixsr/samplers.py": "08f071a68cddb66c78bad341f6fe754a99fdd426a4deb0777cda5d0b0b011f8e",
+      "third_party/helixsr/common/fp16.h": "189e19e4c3a9cb673e55d6f88c4144cb5cf066f4fe5844721daa89c364c74aa8",
+      "third_party/helixsr/ptxsim.py": "2e4a42fcd99b86501425043f7b2da3e5a425633c53243c81dd78fb3265a890d7"
+    }
+  },
+  "reference_fsr4": "7fe9ec2273629e8ac1938a58249b1983a19fff3f",
+  "reference_vulkan": "4bb0c8b1423698a7369efc22b829bf16a99e7128",
+  "canonical_assets": {
+    "bytes": 1903872,
+    "sha256": "762adfde720035f7ac43910846e0ce6826c239bcd41f863196f77c547ae57153",
+    "included": false
+  }
+}

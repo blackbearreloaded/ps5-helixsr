@@ -1,0 +1,256 @@
+{
+  "schema": 1,
+  "dxc_sha256": "b1bfa493d5c780b94c20b8b5f5aed50d1c4d03339cd55f496bd223eedeec1734",
+  "compiler_sha256": "a80148392f006a96d16afcbb9cb9fe63cc4750d262c7612e37a820469f6d3f20",
+  "source_hashes": {
+    "tools/conv_kernels.py": "0ec0e5d93bc75a96e9c8907c989451cac226e6e419b0c396ff911b543e73f765",
+    "shaders/encode_e5m3_resident.hlsl": "cce16e65728eeed400ded51bc01f0cc022e9955d050573b3127ff5f3771e8d78",
+    "third_party/helixsr/common/fp16.h": "189e19e4c3a9cb673e55d6f88c4144cb5cf066f4fe5844721daa89c364c74aa8"
+  },
+  "shaders": [
+    {
+      "name": "conv_16_32_k3_half",
+      "spirv_sha256": "20a2352c426b9bcf9d543ce165029af0481fadb60adbee541a738028cb468e77",
+      "descriptors": [
+        "uniform-buffer",
+        "buffer",
+        "buffer",
+        "buffer",
+        "buffer"
+      ],
+      "specialization": {
+        "channels": 16,
+        "outputs": 32,
+        "kernel_size": 3,
+        "input_e5": false,
+        "outputs_per_invocation": 32,
+        "lanes": 64,
+        "weight_offset": 0
+      },
+      "compile": {
+        "result": "success",
+        "code_bytes": 11676,
+        "metadata_version": 21,
+        "descriptors": 5,
+        "used_sets": 1,
+        "scratch_bytes_per_wave": 0,
+        "scratch_bytes_per_thread": 0,
+        "scratch_valid": false
+      },
+      "adapter": {
+        "adapter_result": 0,
+        "adapter_code_bytes": 11676,
+        "adapter_descriptors": 5,
+        "adapter_push_bytes": 0,
+        "wave_size": 32,
+        "vgprs": 96,
+        "user_sgprs": 3,
+        "lds_size": 0,
+        "scratch": 0
+      },
+      "stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    28 bytes into the SPIR-V binary\n"
+    },
+    {
+      "name": "conv_32_64_k1_half",
+      "spirv_sha256": "7a0f6d1111db82aac080e488dcd4a0bcd2e062bd4431579526d08b5c8c5c1229",
+      "descriptors": [
+        "uniform-buffer",
+        "buffer",
+        "buffer",
+        "buffer",
+        "buffer"
+      ],
+      "specialization": {
+        "channels": 32,
+        "outputs": 64,
+        "kernel_size": 1,
+        "input_e5": false,
+        "outputs_per_invocation": 32,
+        "lanes": 64,
+        "weight_offset": 9216
+      },
+      "compile": {
+        "result": "success",
+        "code_bytes": 11648,
+        "metadata_version": 21,
+        "descriptors": 5,
+        "used_sets": 1,
+        "scratch_bytes_per_wave": 0,
+        "scratch_bytes_per_thread": 0,
+        "scratch_valid": false
+      },
+      "adapter": {
+        "adapter_result": 0,
+        "adapter_code_bytes": 11648,
+        "adapter_descriptors": 5,
+        "adapter_push_bytes": 0,
+        "wave_size": 32,
+        "vgprs": 96,
+        "user_sgprs": 3,
+        "lds_size": 0,
+        "scratch": 0
+      },
+      "stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    28 bytes into the SPIR-V binary\n"
+    },
+    {
+      "name": "conv_64_128_k3_e5",
+      "spirv_sha256": "53c6f4585c2519cc1489dae9c186d4892d1e24f9719564a5c7ae7ebbdfc81fbc",
+      "descriptors": [
+        "uniform-buffer",
+        "buffer",
+        "buffer",
+        "buffer",
+        "buffer"
+      ],
+      "specialization": {
+        "channels": 64,
+        "outputs": 128,
+        "kernel_size": 3,
+        "input_e5": true,
+        "outputs_per_invocation": 32,
+        "lanes": 64,
+        "weight_offset": 13824
+      },
+      "compile": {
+        "result": "success",
+        "code_bytes": 11816,
+        "metadata_version": 21,
+        "descriptors": 5,
+        "used_sets": 1,
+        "scratch_bytes_per_wave": 0,
+        "scratch_bytes_per_thread": 0,
+        "scratch_valid": false
+      },
+      "adapter": {
+        "adapter_result": 0,
+        "adapter_code_bytes": 11816,
+        "adapter_descriptors": 5,
+        "adapter_push_bytes": 0,
+        "wave_size": 32,
+        "vgprs": 96,
+        "user_sgprs": 3,
+        "lds_size": 0,
+        "scratch": 0
+      },
+      "stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    28 bytes into the SPIR-V binary\n"
+    },
+    {
+      "name": "conv_128_128_k3_half",
+      "spirv_sha256": "269a708fa6720f59f410781af4578d7bc0db6e8981a8bf7c3f5310e401b0977e",
+      "descriptors": [
+        "uniform-buffer",
+        "buffer",
+        "buffer",
+        "buffer",
+        "buffer"
+      ],
+      "specialization": {
+        "channels": 128,
+        "outputs": 128,
+        "kernel_size": 3,
+        "input_e5": false,
+        "outputs_per_invocation": 32,
+        "lanes": 64,
+        "weight_offset": 161536
+      },
+      "compile": {
+        "result": "success",
+        "code_bytes": 11688,
+        "metadata_version": 21,
+        "descriptors": 5,
+        "used_sets": 1,
+        "scratch_bytes_per_wave": 0,
+        "scratch_bytes_per_thread": 0,
+        "scratch_valid": false
+      },
+      "adapter": {
+        "adapter_result": 0,
+        "adapter_code_bytes": 11688,
+        "adapter_descriptors": 5,
+        "adapter_push_bytes": 0,
+        "wave_size": 32,
+        "vgprs": 96,
+        "user_sgprs": 3,
+        "lds_size": 0,
+        "scratch": 0
+      },
+      "stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    28 bytes into the SPIR-V binary\n"
+    },
+    {
+      "name": "conv_128_256_k3_half",
+      "spirv_sha256": "3cf478a860a94c9acb3c73e66e5b78f76d6195a21924f3fb45eeeee1ad82d6bb",
+      "descriptors": [
+        "uniform-buffer",
+        "buffer",
+        "buffer",
+        "buffer",
+        "buffer"
+      ],
+      "specialization": {
+        "channels": 128,
+        "outputs": 256,
+        "kernel_size": 3,
+        "input_e5": false,
+        "outputs_per_invocation": 32,
+        "lanes": 64,
+        "weight_offset": 456704
+      },
+      "compile": {
+        "result": "success",
+        "code_bytes": 11688,
+        "metadata_version": 21,
+        "descriptors": 5,
+        "used_sets": 1,
+        "scratch_bytes_per_wave": 0,
+        "scratch_bytes_per_thread": 0,
+        "scratch_valid": false
+      },
+      "adapter": {
+        "adapter_result": 0,
+        "adapter_code_bytes": 11688,
+        "adapter_descriptors": 5,
+        "adapter_push_bytes": 0,
+        "wave_size": 32,
+        "vgprs": 96,
+        "user_sgprs": 3,
+        "lds_size": 0,
+        "scratch": 0
+      },
+      "stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    28 bytes into the SPIR-V binary\n"
+    },
+    {
+      "name": "encode_e5m3_resident",
+      "spirv_sha256": "9cda82abb16e46ceaab2b9d983ea913aed8f9e683191efa0e4d8a0a297f16b4c",
+      "descriptors": [
+        "uniform-buffer",
+        "buffer",
+        "buffer"
+      ],
+      "specialization": {},
+      "compile": {
+        "result": "success",
+        "code_bytes": 2252,
+        "metadata_version": 21,
+        "descriptors": 3,
+        "used_sets": 1,
+        "scratch_bytes_per_wave": 0,
+        "scratch_bytes_per_thread": 0,
+        "scratch_valid": false
+      },
+      "adapter": {
+        "adapter_result": 0,
+        "adapter_code_bytes": 2252,
+        "adapter_descriptors": 3,
+        "adapter_push_bytes": 0,
+        "wave_size": 32,
+        "vgprs": 16,
+        "user_sgprs": 3,
+        "lds_size": 0,
+        "scratch": 0
+      },
+      "stderr": ""
+    }
+  ],
+  "execution_qualified": false,
+  "scope": "SPIR-V validation and native offline compilation; no device execution"
+}

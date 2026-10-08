@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "result": "success",
+  "device": "llvmpipe (LLVM 21.1.8, 256 bits)",
+  "contexts": 3,
+  "model_bytes": 1903872,
+  "total_device_bytes": 13041420,
+  "total_host_visible_bytes": 5755824,
+  "recorded": true,
+  "submitted": false,
+  "in_flight_rejected": true,
+  "application_views_bound": true,
+  "model_repacked_and_uploaded_during_create": true,
+  "execution_qualified": false,
+  "scope": "public API context creation and command recording; no dispatch execution"
+}

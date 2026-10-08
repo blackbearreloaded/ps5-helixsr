@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "cases": [
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "allocations": 21,
+      "pipelines": 17,
+      "descriptor_sets": 22,
+      "uniform_bytes": 5632,
+      "frame0_dispatches": 22,
+      "frame1_dispatches": 18,
+      "frame0_barriers": 22,
+      "frame1_barriers": 18,
+      "manifest_sha256": "3409cf9f3ebe2748dfae395269de16c5b0cc7460a98bf759b9500ac9de7bd1cf"
+    },
+    {
+      "shape": [
+        1920,
+        1080,
+        1280,
+        720
+      ],
+      "allocations": 21,
+      "pipelines": 17,
+      "descriptor_sets": 23,
+      "uniform_bytes": 5888,
+      "frame0_dispatches": 23,
+      "frame1_dispatches": 18,
+      "frame0_barriers": 23,
+      "frame1_barriers": 18,
+      "manifest_sha256": "e6a5b2a1146f5324b78f8e828c55a83963e6133a3c3b42dc1aa409f0ddd2327a"
+    },
+    {
+      "shape": [
+        1919,
+        1079,
+        1279,
+        719
+      ],
+      "allocations": 21,
+      "pipelines": 17,
+      "descriptor_sets": 23,
+      "uniform_bytes": 5888,
+      "frame0_dispatches": 23,
+      "frame1_dispatches": 18,
+      "frame0_barriers": 23,
+      "frame1_barriers": 18,
+      "manifest_sha256": "6c11f3fc0a84d883d20121595062e23a1f4e07a51e5c16c918d78724d9fccfee"
+    },
+    {
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "allocations": 21,
+      "pipelines": 17,
+      "descriptor_sets": 22,
+      "uniform_bytes": 5632,
+      "frame0_dispatches": 22,
+      "frame1_dispatches": 18,
+      "frame0_barriers": 22,
+      "frame1_barriers": 18,
+      "manifest_sha256": "fca81338fdd8ed13349932b3390865c7e146b1288d29df54375a47621f85f2b9"
+    },
+    {
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "allocations": 21,
+      "pipelines": 17,
+      "descriptor_sets": 22,
+      "uniform_bytes": 5632,
+      "frame0_dispatches": 22,
+      "frame1_dispatches": 18,
+      "frame0_barriers": 22,
+      "frame1_barriers": 18,
+      "manifest_sha256": "3c0263bf7d1d392aa0ea53455c7c9cfd9b4604cee28061f8438fbdd884b95f15"
+    }
+  ],
+  "long_sequence": {
+    "frames": 64,
+    "allocations": 21,
+    "allocation_count_stable": true,
+    "command_count_range": [
+      36,
+      53
+    ],
+    "dispatch_count_range": [
+      18,
+      22
+    ],
+    "reset_clear_frames": [
+      0,
+      32
+    ]
+  },
+  "in_flight_reuse_rejected": true,
+  "records_only": true,
+  "execution_qualified": false,
+  "scope": "persistent resource ownership, descriptor slots, uniform packing, barriers and full-frame command order"
+}

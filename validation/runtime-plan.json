@@ -1,0 +1,649 @@
+{
+  "schema": 1,
+  "cases": [
+    {
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "frame": 0,
+      "auto_exposure": false,
+      "steps": 25,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "frame": 0,
+      "auto_exposure": true,
+      "steps": 29,
+      "dispatches": 22
+    },
+    {
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "frame": 1,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "frame": 1,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "frame": 2,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "frame": 2,
+      "auto_exposure": true,
+      "steps": 28,
+      "dispatches": 22
+    },
+    {
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "frame": 7,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "frame": 7,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "frame": 31,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        128,
+        96,
+        128,
+        96
+      ],
+      "frame": 31,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 0,
+      "auto_exposure": false,
+      "steps": 25,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 0,
+      "auto_exposure": true,
+      "steps": 29,
+      "dispatches": 22
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 1,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 1,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 2,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 2,
+      "auto_exposure": true,
+      "steps": 28,
+      "dispatches": 22
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 7,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 7,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 31,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 31,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "frame": 0,
+      "auto_exposure": false,
+      "steps": 25,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "frame": 0,
+      "auto_exposure": true,
+      "steps": 29,
+      "dispatches": 22
+    },
+    {
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "frame": 1,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "frame": 1,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "frame": 2,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "frame": 2,
+      "auto_exposure": true,
+      "steps": 28,
+      "dispatches": 22
+    },
+    {
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "frame": 7,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "frame": 7,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "frame": 31,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        256,
+        192,
+        128,
+        96
+      ],
+      "frame": 31,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1919,
+        1079,
+        1279,
+        719
+      ],
+      "frame": 0,
+      "auto_exposure": false,
+      "steps": 25,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1919,
+        1079,
+        1279,
+        719
+      ],
+      "frame": 0,
+      "auto_exposure": true,
+      "steps": 30,
+      "dispatches": 23
+    },
+    {
+      "shape": [
+        1919,
+        1079,
+        1279,
+        719
+      ],
+      "frame": 1,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1919,
+        1079,
+        1279,
+        719
+      ],
+      "frame": 1,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1919,
+        1079,
+        1279,
+        719
+      ],
+      "frame": 2,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1919,
+        1079,
+        1279,
+        719
+      ],
+      "frame": 2,
+      "auto_exposure": true,
+      "steps": 29,
+      "dispatches": 23
+    },
+    {
+      "shape": [
+        1919,
+        1079,
+        1279,
+        719
+      ],
+      "frame": 7,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1919,
+        1079,
+        1279,
+        719
+      ],
+      "frame": 7,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1919,
+        1079,
+        1279,
+        719
+      ],
+      "frame": 31,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1919,
+        1079,
+        1279,
+        719
+      ],
+      "frame": 31,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1920,
+        1080,
+        1280,
+        720
+      ],
+      "frame": 0,
+      "auto_exposure": false,
+      "steps": 25,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1920,
+        1080,
+        1280,
+        720
+      ],
+      "frame": 0,
+      "auto_exposure": true,
+      "steps": 30,
+      "dispatches": 23
+    },
+    {
+      "shape": [
+        1920,
+        1080,
+        1280,
+        720
+      ],
+      "frame": 1,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1920,
+        1080,
+        1280,
+        720
+      ],
+      "frame": 1,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1920,
+        1080,
+        1280,
+        720
+      ],
+      "frame": 2,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1920,
+        1080,
+        1280,
+        720
+      ],
+      "frame": 2,
+      "auto_exposure": true,
+      "steps": 29,
+      "dispatches": 23
+    },
+    {
+      "shape": [
+        1920,
+        1080,
+        1280,
+        720
+      ],
+      "frame": 7,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1920,
+        1080,
+        1280,
+        720
+      ],
+      "frame": 7,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1920,
+        1080,
+        1280,
+        720
+      ],
+      "frame": 31,
+      "auto_exposure": false,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        1920,
+        1080,
+        1280,
+        720
+      ],
+      "frame": 31,
+      "auto_exposure": true,
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 19,
+      "auto_exposure": true,
+      "dynamic": [
+        0.25,
+        -0.375,
+        -0.125,
+        0.4375,
+        0.75,
+        0,
+        1
+      ],
+      "steps": 24,
+      "dispatches": 18
+    },
+    {
+      "shape": [
+        192,
+        144,
+        128,
+        96
+      ],
+      "frame": 19,
+      "auto_exposure": true,
+      "dynamic": [
+        -0.5,
+        0.25,
+        0,
+        0,
+        2.0,
+        1,
+        0
+      ],
+      "steps": 24,
+      "dispatches": 18
+    }
+  ],
+  "exact_matches": 52,
+  "scope": "C++ runtime preparation versus checked Python descriptor/uniform oracle"
+}

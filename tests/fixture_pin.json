@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "manifest_sha256": "b10f251e31f76540ed862fbe0fb35138731345870d6d5c9d0a286715b86f3f93",
+  "render": [32, 24],
+  "output": [48, 36],
+  "frames": 24
+}

@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "verified_source_hashes": {
+    "kernels/rt/px_cpp.h": "1da8b1545520e26c23e595f24241337d1aaaac05d067b67e5d457c633891ae94",
+    "kernels/common/port_cpp.h": "61c419b8e3bfd419b5cb284e69480795019991cc3a8a4916c12c42e63fcdb271"
+  },
+  "primitive_declarations": {
+    "px_yield": [
+      "kernels/rt/px_cpp.h"
+    ],
+    "px_ballot": [
+      "kernels/rt/px_cpp.h"
+    ],
+    "px_tex_level": [
+      "kernels/rt/px_cpp.h"
+    ],
+    "px_tex_fetch": [
+      "kernels/rt/px_cpp.h"
+    ],
+    "px_surf_store": [
+      "kernels/rt/px_cpp.h"
+    ]
+  },
+  "primitive_definitions": {
+    "px_yield": [],
+    "px_ballot": [],
+    "px_tex_level": [],
+    "px_tex_fetch": [],
+    "px_surf_store": []
+  },
+  "missing_runtime_definitions": [
+    "px_yield",
+    "px_ballot",
+    "px_tex_level",
+    "px_tex_fetch",
+    "px_surf_store"
+  ],
+  "full_graph_runner_candidates": [],
+  "full_graph_cpu_reference_available": false,
+  "conclusion": "published setup supplies shared CPU semantic headers but no runnable full-graph CPU reference",
+  "next_gate": "run the signed console candidate and evaluate its 16 captures"
+}

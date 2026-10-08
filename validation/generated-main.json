@@ -1,0 +1,1374 @@
+{
+  "schema": 1,
+  "compiler_sha256": "a80148392f006a96d16afcbb9cb9fe63cc4750d262c7612e37a820469f6d3f20",
+  "dxc_sha256": "b1bfa493d5c780b94c20b8b5f5aed50d1c4d03339cd55f496bd223eedeec1734",
+  "spirv_opt_sha256": "bb5b6b2ffa2ea099091bd4d83999e94ecfa5886922722d330dad7553af4f7355",
+  "numeric_mode": "PX_FAST=1 with published per-kernel recipe flags",
+  "source_hashes": {
+    "helixsr_setup.py": "b3c3e72b2f005bf2c0cd64e7fcdaecc5d66537206a02dd0054a2cc79d02da48d",
+    "kernels/common/fp16.h": "189e19e4c3a9cb673e55d6f88c4144cb5cf066f4fe5844721daa89c364c74aa8",
+    "kernels/common/port_cpp.h": "61c419b8e3bfd419b5cb284e69480795019991cc3a8a4916c12c42e63fcdb271",
+    "kernels/common/port_hlsl.hlsli": "a7505db37b23a78290fe22a7a5f4cb2185fd9902e89a61a4a0993920f70ea109",
+    "kernels/rt/px_common.h": "c4d4768ac6e763c45aa0e3c4bf8bd3a7e9448a1d463818bffc2fb12b8b6bb269",
+    "kernels/rt/px_cpp.h": "1da8b1545520e26c23e595f24241337d1aaaac05d067b67e5d457c633891ae94",
+    "kernels/rt/px_hlsl.h": "d7fb59d35c4f99f49de074e6d5e13d70e3c693909266a4e8e6a6ce60e87344da",
+    "kernels/u5/u5_memory.h": "ef2dc33fb1daec09bc197701669c9fa8acb978187331eec0edf5dc0b8d206deb",
+    "lib/compact_hlsl.py": "70c15cc3a1500921780a4c971681dd63c0d34a3b81835f5f453677405b5c9081",
+    "lib/compact_u5.py": "6473a201d8a66ec43eaa83b4b8e2a4ffb6f2a1838d9a3c3bb60e53adab8828c8",
+    "lib/extract_ptx.py": "3d0ece13ce0707d15eba2e5bf34285fa2684f26ec778cc5c227e69d65faf97c9",
+    "lib/extract_weights.py": "6ddfa58c1b73a4ecbbe55e7cf9662b125267fb1ce6a3fc943117b78af6cd321a",
+    "lib/family_hlsl.py": "c2b8c3760d53be3fd89bd72e044019a880d5737b6f82d20a696053f202c9a935",
+    "lib/family_k/gen_helper.py": "1884a19f58a1fd2b84ca027adbc522fec40206fa91c2b3e89fed0340375993f1",
+    "lib/family_k/trace_frags.py": "2a726434f490ed134e6db8671d86c83bb3571f1a929a573315dbe25d0c6abd88",
+    "lib/family_k/two_sites.json": "c308d416994c04a6627ea6172dc18c190e7ff1ae36bcd5d8f51e50583e22a9b3",
+    "lib/family_k/validate.py": "bc53984956cf3af1d9826f3991906dbd2a9fe605479bf43ec59fa0c44f740646",
+    "lib/family_u/gen_helper.py": "33be1fc1f0118c705553cffca6713a0115f611bcdca1aa5f7ca7027773f88698",
+    "lib/family_u/ptxsim_up.py": "ee709ce0f7a17dc23ed55616abce84a90456904d299c323e785efe1cfded8b77",
+    "lib/family_u/trace_frags.py": "22791c61526566c6b3a63f3f6d7d3e40141b508c9ff07a41da18ca4d617be94d",
+    "lib/family_u/two_sites.json": "bd08f635b0ae433f70a303632af49b6c0ec2040d724410e17ae00a64f7bb30fe",
+    "lib/family_u/validate.py": "1a7f331757c7a8818e60076701c6a2d2b53a9f32fcbf8884a28c97b420f47152",
+    "lib/fast_tiles.py": "bea07575c426db6864b26e03e8ea92d7d0afc0502c80270cb64d9f844d1ce55f",
+    "lib/kernels.py": "617c1c09499c65720feb6c840cd4eac090e991adb275f05d957a6f7ac95a76a6",
+    "lib/load_fence.py": "0af697317ae3ca6dc5074e716c3b474ac27061c4aa503d847def607c242d3c7d",
+    "lib/model/launch_synth.cpp": "3ba7466bdb02a7522eeeb3015a42b9fde85ed4919061fcdab1cd249b17777b52",
+    "lib/model/model.cpp": "7825fe4d9e3d7f2dc453b5118812c00c6424f27a84d20e1282187fafd399a984",
+    "lib/model/model.h": "6017a9d8f67591b2db159b266d102a9f249c627274135e6debbb312bfee5991f",
+    "lib/model/model_gen.inc": "eb371a4fd7309196a3b1b6ca8db577642088ace5f1f6257e2fe7fa3170179a63",
+    "lib/ptx2hlsl.py": "86e457d832eb93eed819447e684e82640b6acd5b21613f05bde0bedf39fb356e",
+    "lib/ptxsim.py": "2e4a42fcd99b86501425043f7b2da3e5a425633c53243c81dd78fb3265a890d7",
+    "lib/regen_kernels.py": "c397fbeb60401ace84cfff5be1239bfed2035c1b6d01cd1d63af293d62de43b9",
+    "lib/samplers.py": "08f071a68cddb66c78bad341f6fe754a99fdd426a4deb0777cda5d0b0b011f8e",
+    "lib/trace_tables.py": "92375b46cf2c993260e4878cb196a549e086b5357b651f1b5af7c5ba09a64786",
+    "lib/u5_roll.py": "7d179b0d3c5c74c664e8c05fe9f6c1b43ccc81f30f00b20137a721613f23d77b",
+    "lib/u5_rows.py": "5ab37c7c54cf03657692c83ea7bd01a6522275a5f75dd47a09fb76ee67123d56"
+  },
+  "kernels": [
+    {
+      "name": "k8_hdr_mvdiff_mvlo",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXT0",
+          "kind": "sampled-image",
+          "register": "t0",
+          "parameter_offset": 352
+        },
+        {
+          "binding": 2,
+          "name": "PXS0",
+          "kind": "sampler",
+          "register": "s0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 3,
+          "name": "PXT1",
+          "kind": "sampled-image",
+          "register": "t1",
+          "parameter_offset": 344
+        },
+        {
+          "binding": 4,
+          "name": "PXS1",
+          "kind": "sampler",
+          "register": "s1",
+          "parameter_offset": null
+        },
+        {
+          "binding": 5,
+          "name": "PXT2",
+          "kind": "sampled-image",
+          "register": "t2",
+          "parameter_offset": 360
+        },
+        {
+          "binding": 6,
+          "name": "PXS2",
+          "kind": "sampler",
+          "register": "s2",
+          "parameter_offset": null
+        },
+        {
+          "binding": 7,
+          "name": "PXT3",
+          "kind": "sampled-image",
+          "register": "t3",
+          "parameter_offset": 312
+        },
+        {
+          "binding": 8,
+          "name": "PXT4",
+          "kind": "sampled-image",
+          "register": "t4",
+          "parameter_offset": 304
+        },
+        {
+          "binding": 9,
+          "name": "PXT5",
+          "kind": "sampled-image",
+          "register": "t5",
+          "parameter_offset": 280
+        },
+        {
+          "binding": 10,
+          "name": "PXT6",
+          "kind": "sampled-image",
+          "register": "t6",
+          "parameter_offset": 288
+        },
+        {
+          "binding": 11,
+          "name": "PXS6",
+          "kind": "sampler",
+          "register": "s6",
+          "parameter_offset": null
+        },
+        {
+          "binding": 12,
+          "name": "PXT7",
+          "kind": "sampled-image",
+          "register": "t7",
+          "parameter_offset": 320
+        },
+        {
+          "binding": 13,
+          "name": "PXS7",
+          "kind": "sampler",
+          "register": "s7",
+          "parameter_offset": null
+        },
+        {
+          "binding": 14,
+          "name": "PXW0",
+          "kind": "buffer",
+          "register": "u0",
+          "parameter_offset": 376,
+          "half_view": true
+        },
+        {
+          "binding": 15,
+          "name": "PXU0",
+          "kind": "storage-image",
+          "register": "u1",
+          "parameter_offset": 328,
+          "image_format": "rg16f"
+        },
+        {
+          "binding": 16,
+          "name": "PXU1",
+          "kind": "storage-image",
+          "register": "u2",
+          "parameter_offset": 368,
+          "image_format": "r16f"
+        },
+        {
+          "binding": 17,
+          "name": "PXU2",
+          "kind": "storage-image",
+          "register": "u3",
+          "parameter_offset": 384,
+          "image_format": "rgba16f"
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "k8_hdr_mvdiff_mvlo-vulkan.hlsl": "f4c3511a7f9f042dad5ac3524c59f6a97c30ede5cbd407810d3e63812118a3e1",
+        "k8_hdr_mvdiff_mvlo.hlsl": "b0fda65132d8e35a55d185b16fd87ab1dcce2825162271946fddb06536bbe030",
+        "k8_hdr_mvdiff_mvlo_body.h": "509a40a705e33dbdf77135320b8313753b66d19e8baaee02b31b88a78eaf3224",
+        "k8_hdr_mvdiff_mvlo_cfg.h": "b6b593541c5b6b407a49a40e38e11a4cf80911a4832fcc12e8221052bdc3d556"
+      },
+      "dxc_stderr": "build/main-inventory/generated/k8_hdr_mvdiff_mvlo/k8_hdr_mvdiff_mvlo-vulkan.hlsl:44:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "half_views": 1,
+      "spirv_sha256": "6311dc10fab882c1f4bfaf83314608dd79f21402e5cbb24c1b64bd27da5cdb8c",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 17220,
+          "metadata_version": 21,
+          "descriptors": 18,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 17220,
+          "adapter_descriptors": 18,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 64,
+          "user_sgprs": 3,
+          "lds_size": 4,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityStorageImageExtendedFormats (49)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    76 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityStorageImageExtendedFormats (49)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    76 bytes into the SPIR-V binary\n",
+      "source_sha256": "f4c3511a7f9f042dad5ac3524c59f6a97c30ede5cbd407810d3e63812118a3e1",
+      "ptx_sha256": "6b88dd4ec6c1ecd9c1ec30e0af2ec12b20cc4e365b68ae57c1ca71a8c76ac911",
+      "capability_warnings": true
+    },
+    {
+      "name": "luma_convert",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXT0",
+          "kind": "sampled-image",
+          "register": "t0",
+          "parameter_offset": 40
+        },
+        {
+          "binding": 2,
+          "name": "PXW0",
+          "kind": "buffer",
+          "register": "u0",
+          "parameter_offset": 32
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "luma_convert-vulkan.hlsl": "12608274a9df9e1d2a89b62c0f8c8bd6bed5db3def2caa7bacf0960e7544990b",
+        "luma_convert.hlsl": "ad05e4136b5d1c7675714466722913da717063c7f0310b539dffc1497ab9d1e1",
+        "luma_convert_body.h": "389f1ce2696e16e150e1f66713d8e9cc4adc2277e02a75964e624aeb5c713ac7",
+        "luma_convert_cfg.h": "e75df089260d69df8056f0aaa1ea59b089e9779b098f68da12bd797742e4d97c"
+      },
+      "dxc_stderr": "build/main-inventory/generated/luma_convert/luma_convert-vulkan.hlsl:25:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "spirv_sha256": "c7a31f892fa6ae13be060280c7b737b3782efccd95585db390244546c84ef6ee",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 452,
+          "metadata_version": 21,
+          "descriptors": 3,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 452,
+          "adapter_descriptors": 3,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 16,
+          "user_sgprs": 3,
+          "lds_size": 0,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    28 bytes into the SPIR-V binary\n",
+      "source_sha256": "12608274a9df9e1d2a89b62c0f8c8bd6bed5db3def2caa7bacf0960e7544990b",
+      "ptx_sha256": "ce5fb9e27ac7d15e02f8496d0d7cdc4368480aaf73ae8e858c771eeef3589df0",
+      "capability_warnings": true
+    },
+    {
+      "name": "reduce_sum",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXR0",
+          "kind": "buffer",
+          "register": "t0",
+          "parameter_offset": 8
+        },
+        {
+          "binding": 2,
+          "name": "PXW1",
+          "kind": "buffer",
+          "register": "u0",
+          "parameter_offset": 16
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "reduce_sum-vulkan.hlsl": "c7c0a10d80cad8206ca9247f5d0da82d71d6c70ac475d56be10ba80ce6688a01",
+        "reduce_sum.hlsl": "5c63e4340638e9228d8c9ded7fce3fca8dc25a0410b8adf8a25fa264a5615d6b",
+        "reduce_sum_body.h": "2b24aedfa48ef6fe663afcdcc9f5a9cde3a0172608314e0a11bfa4b82c303a1a",
+        "reduce_sum_cfg.h": "4d7f3e78d2f4172ab23d607f58bba195fb401d73032a0599b9c8110145fb3972"
+      },
+      "dxc_stderr": "build/main-inventory/generated/reduce_sum/reduce_sum-vulkan.hlsl:26:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "spirv_sha256": "ec5790b3e2f810b7e9a7e84179e7e9291082502707d053b19566f808514e7c36",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 576,
+          "metadata_version": 21,
+          "descriptors": 3,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 576,
+          "adapter_descriptors": 3,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 16,
+          "user_sgprs": 3,
+          "lds_size": 2,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformBallot (64)\n    60 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformBallot (64)\n    60 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    68 bytes into the SPIR-V binary\n",
+      "source_sha256": "c7c0a10d80cad8206ca9247f5d0da82d71d6c70ac475d56be10ba80ce6688a01",
+      "ptx_sha256": "3503c78c5dc3ba8331a4f2002bf534f434a775cd24ff98a4a9ceacdda5285c18",
+      "capability_warnings": true
+    },
+    {
+      "name": "auto_exposure_copy",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXR0",
+          "kind": "buffer",
+          "register": "t0",
+          "parameter_offset": 16
+        },
+        {
+          "binding": 2,
+          "name": "PXU0",
+          "kind": "storage-image",
+          "register": "u0",
+          "parameter_offset": 8,
+          "image_format": "r16f"
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "auto_exposure_copy-vulkan.hlsl": "85720f970d7bc13c74567e92ceb1d94be6b6c12d75dc2fb8bfcde53625093a8b",
+        "auto_exposure_copy.hlsl": "6112d31b488e64d8b76d1daa13749e36515048b6528ddce4abbf74a5abf9fabc",
+        "auto_exposure_copy_body.h": "908921d377f38ff57b66ae17ce47e22c0652ef163c0d4cab39db32e7de25ea9c",
+        "auto_exposure_copy_cfg.h": "211c5521a2fe62f56c47d0974cf8fab5d7f77e2ba5c61aa7cec0755fb144ffb2"
+      },
+      "dxc_stderr": "build/main-inventory/generated/auto_exposure_copy/auto_exposure_copy-vulkan.hlsl:24:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "spirv_sha256": "7b2ff2837de813d8dc683d34155d533c8244c260368cfa81122aba955af296d8",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 144,
+          "metadata_version": 21,
+          "descriptors": 3,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 144,
+          "adapter_descriptors": 3,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 16,
+          "user_sgprs": 3,
+          "lds_size": 0,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityStorageImageExtendedFormats (49)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityStorageImageExtendedFormats (49)\n    36 bytes into the SPIR-V binary\n",
+      "source_sha256": "85720f970d7bc13c74567e92ceb1d94be6b6c12d75dc2fb8bfcde53625093a8b",
+      "ptx_sha256": "a488bfe10623a2c137ad0da113561fbf8d5d391c8766ad793ea3e56b9addf7ea",
+      "capability_warnings": true
+    },
+    {
+      "name": "copy_exposure",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXT0",
+          "kind": "sampled-image",
+          "register": "t0",
+          "parameter_offset": 8
+        },
+        {
+          "binding": 2,
+          "name": "PXS0",
+          "kind": "sampler",
+          "register": "s0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 3,
+          "name": "PXU0",
+          "kind": "storage-image",
+          "register": "u0",
+          "parameter_offset": 0,
+          "image_format": "r16f"
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "copy_exposure-vulkan.hlsl": "33056a63315182f5ad14e9d0045c1e082d6909b841f79a155fde5f3706255492",
+        "copy_exposure.hlsl": "591ac73c468eb749ac145d37ca7b6d9c0e58b1779753cbc314b3bbd6891a0e10",
+        "copy_exposure_body.h": "1b61abe7892b9a8d7275913ea554c227663271e75e263caad41b20d323f5c70b",
+        "copy_exposure_cfg.h": "7be6209ec02d2d7afbbf53c17852787392f90156bc1e7f1d5910a6c4d0430fab"
+      },
+      "dxc_stderr": "build/main-inventory/generated/copy_exposure/copy_exposure-vulkan.hlsl:24:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "spirv_sha256": "418c57cc18f35d31cdb3546a508d43145fa3401d7f959e2b7e6b6276823258cc",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 108,
+          "metadata_version": 21,
+          "descriptors": 4,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 108,
+          "adapter_descriptors": 3,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 16,
+          "user_sgprs": 3,
+          "lds_size": 0,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityStorageImageExtendedFormats (49)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityStorageImageExtendedFormats (49)\n    28 bytes into the SPIR-V binary\n",
+      "source_sha256": "33056a63315182f5ad14e9d0045c1e082d6909b841f79a155fde5f3706255492",
+      "ptx_sha256": "04aa6f20a451da6973de62b1c4d2bfb04e20949543da39250daf02f6287a8613",
+      "capability_warnings": true
+    },
+    {
+      "name": "clear_buffer",
+      "success": true,
+      "implementation": "vkCmdFillBuffer",
+      "contract": "tools/clear_operation.py validates exact full-buffer zero fill"
+    },
+    {
+      "name": "k4",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXR0",
+          "kind": "buffer",
+          "register": "t0",
+          "parameter_offset": 0
+        },
+        {
+          "binding": 2,
+          "name": "PXR1",
+          "kind": "buffer",
+          "register": "t1",
+          "parameter_offset": 8
+        },
+        {
+          "binding": 3,
+          "name": "PXR2",
+          "kind": "buffer",
+          "register": "t2",
+          "parameter_offset": 16
+        },
+        {
+          "binding": 4,
+          "name": "PXR3",
+          "kind": "buffer",
+          "register": "t3",
+          "parameter_offset": 24
+        },
+        {
+          "binding": 5,
+          "name": "PXR4",
+          "kind": "buffer",
+          "register": "t4",
+          "parameter_offset": 240
+        },
+        {
+          "binding": 6,
+          "name": "PXR5",
+          "kind": "buffer",
+          "register": "t5",
+          "parameter_offset": 248
+        },
+        {
+          "binding": 7,
+          "name": "PXW6",
+          "kind": "buffer",
+          "register": "u0",
+          "parameter_offset": 256,
+          "half_view": true
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "k4-vulkan.hlsl": "d33266af2915c16f88cf919b6b7aa3b45f46d6cdf47ea285f99e8e727142a098",
+        "k4.hlsl": "28aaac16fd2753540868d1fc30aa8440cd7bf65614da56e7e272055abc587f20",
+        "k4_body.h": "d0aab0451f7b54d33b80bf6882602dd3053235adfc91d58f3ae9467ab6ef353f",
+        "k4_cfg.h": "3944d2335759d822108bf243d941a7f471420f582504292d2000fe1e65eb3f7a"
+      },
+      "dxc_stderr": "build/main-inventory/generated/k4/k4-vulkan.hlsl:40:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "half_views": 1,
+      "spirv_sha256": "0ae3120df15fae2050f9bc0cd062e7378d782432e73c7defa73338b89525be2a",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 16200,
+          "metadata_version": 21,
+          "descriptors": 8,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 16200,
+          "adapter_descriptors": 8,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 128,
+          "user_sgprs": 3,
+          "lds_size": 64,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    76 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    84 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    76 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    84 bytes into the SPIR-V binary\n",
+      "source_sha256": "d33266af2915c16f88cf919b6b7aa3b45f46d6cdf47ea285f99e8e727142a098",
+      "ptx_sha256": "71281e99ef8405d5d2d0a4caaedd2e5bc15397362e54bc845c74827e0022cbb5",
+      "capability_warnings": true
+    },
+    {
+      "name": "k7",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXR0",
+          "kind": "buffer",
+          "register": "t0",
+          "parameter_offset": 0
+        },
+        {
+          "binding": 2,
+          "name": "PXR1",
+          "kind": "buffer",
+          "register": "t1",
+          "parameter_offset": 8
+        },
+        {
+          "binding": 3,
+          "name": "PXR2",
+          "kind": "buffer",
+          "register": "t2",
+          "parameter_offset": 16
+        },
+        {
+          "binding": 4,
+          "name": "PXR3",
+          "kind": "buffer",
+          "register": "t3",
+          "parameter_offset": 32
+        },
+        {
+          "binding": 5,
+          "name": "PXW4",
+          "kind": "buffer",
+          "register": "u0",
+          "parameter_offset": 24
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "k7-vulkan.hlsl": "a6f3d1132cc78f8a58da784c409f0345b513764249c0842d661e87c86b19b04e",
+        "k7.hlsl": "63f2bca7d42fc49ceaa61a3ad07f5d730015d004d95623ee767d6374d8051060",
+        "k7_body.h": "9ced93018945faee091ee6ac81dd7b6f077efa6874587217c9b16721834e50a3",
+        "k7_cfg.h": "57fe14f206ff38f536e1f69651ecdc75274494df81c780fcf0440329861aa477"
+      },
+      "dxc_stderr": "build/main-inventory/generated/k7/k7-vulkan.hlsl:32:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "spirv_sha256": "2e94f5565ec36d5f44a04f2a6d1666da1483a6e1e69db8e7154f70dd95acef8f",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 25276,
+          "metadata_version": 21,
+          "descriptors": 6,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 25276,
+          "adapter_descriptors": 6,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 160,
+          "user_sgprs": 3,
+          "lds_size": 40,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    60 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    60 bytes into the SPIR-V binary\n",
+      "source_sha256": "a6f3d1132cc78f8a58da784c409f0345b513764249c0842d661e87c86b19b04e",
+      "ptx_sha256": "5f75bfff5c9d14f7319f13502b1d26bee8feded0becdd51ee69eb6bc207f9ac0",
+      "capability_warnings": true
+    },
+    {
+      "name": "k9",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXR0",
+          "kind": "buffer",
+          "register": "t0",
+          "parameter_offset": 0
+        },
+        {
+          "binding": 2,
+          "name": "PXR1",
+          "kind": "buffer",
+          "register": "t1",
+          "parameter_offset": 8
+        },
+        {
+          "binding": 3,
+          "name": "PXR2",
+          "kind": "buffer",
+          "register": "t2",
+          "parameter_offset": 16
+        },
+        {
+          "binding": 4,
+          "name": "PXR3",
+          "kind": "buffer",
+          "register": "t3",
+          "parameter_offset": 24
+        },
+        {
+          "binding": 5,
+          "name": "PXR4",
+          "kind": "buffer",
+          "register": "t4",
+          "parameter_offset": 240
+        },
+        {
+          "binding": 6,
+          "name": "PXR5",
+          "kind": "buffer",
+          "register": "t5",
+          "parameter_offset": 248
+        },
+        {
+          "binding": 7,
+          "name": "PXW6",
+          "kind": "buffer",
+          "register": "u0",
+          "parameter_offset": 256,
+          "half_view": true
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "k9-vulkan.hlsl": "a19ddbfd64e51b668943567e0da216a5afecf41ff022766669c25647dab33e98",
+        "k9.hlsl": "f953ed745b1f78eb4cced5e3b28f807185a43b9acd8b91af47cf003a00487c63",
+        "k9_body.h": "13a6a73702c45258ff2d73b06e733449875c5aea5d6f8d3669daf8a2649d2c87",
+        "k9_cfg.h": "af953be6416329c4a789aa04963100a2314e6e74a94ad7b6424644accd2d53cf"
+      },
+      "dxc_stderr": "build/main-inventory/generated/k9/k9-vulkan.hlsl:40:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "half_views": 1,
+      "spirv_sha256": "f4fb5af74eb1ccc6cc3faba54e6d9abbe2bfa0cdbbcecd17d8b1f6beb22ede01",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 21992,
+          "metadata_version": 21,
+          "descriptors": 8,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 21992,
+          "adapter_descriptors": 8,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 224,
+          "user_sgprs": 3,
+          "lds_size": 40,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    76 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    84 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    76 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    84 bytes into the SPIR-V binary\n",
+      "source_sha256": "a19ddbfd64e51b668943567e0da216a5afecf41ff022766669c25647dab33e98",
+      "ptx_sha256": "423415a4f41002b6b83dd18d09df025344a9ef4ed4448425842f3f969b5311d5",
+      "capability_warnings": true
+    },
+    {
+      "name": "k10",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXR0",
+          "kind": "buffer",
+          "register": "t0",
+          "parameter_offset": 0
+        },
+        {
+          "binding": 2,
+          "name": "PXR1",
+          "kind": "buffer",
+          "register": "t1",
+          "parameter_offset": 8
+        },
+        {
+          "binding": 3,
+          "name": "PXR2",
+          "kind": "buffer",
+          "register": "t2",
+          "parameter_offset": 16
+        },
+        {
+          "binding": 4,
+          "name": "PXR3",
+          "kind": "buffer",
+          "register": "t3",
+          "parameter_offset": 24
+        },
+        {
+          "binding": 5,
+          "name": "PXR4",
+          "kind": "buffer",
+          "register": "t4",
+          "parameter_offset": 240
+        },
+        {
+          "binding": 6,
+          "name": "PXR5",
+          "kind": "buffer",
+          "register": "t5",
+          "parameter_offset": 248
+        },
+        {
+          "binding": 7,
+          "name": "PXW6",
+          "kind": "buffer",
+          "register": "u0",
+          "parameter_offset": 256
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "k10-vulkan.hlsl": "b1e60286185e68599151b0b7a738789fa3659dc2fe4e815d5e8984c034833e77",
+        "k10.hlsl": "e9ccec3a1f309a4a76233001f37827a2464dfb91e622c2675236651037126637",
+        "k10_body.h": "b8b84de38bd82c70e812308e2cf8a589e80a94a29f161eeb379d054306b156b2",
+        "k10_cfg.h": "a8822f2f5709e017c30a17a85371437f1ee83194fdad0f459782c5b6d312ab14"
+      },
+      "dxc_stderr": "build/main-inventory/generated/k10/k10-vulkan.hlsl:36:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "spirv_sha256": "e30757cd3bea14671b436d3811e96dedd29e7094bb9356c4fdbfba93adf33051",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 33816,
+          "metadata_version": 21,
+          "descriptors": 8,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 33816,
+          "adapter_descriptors": 8,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 256,
+          "user_sgprs": 3,
+          "lds_size": 32,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    60 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    76 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    60 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    76 bytes into the SPIR-V binary\n",
+      "source_sha256": "b1e60286185e68599151b0b7a738789fa3659dc2fe4e815d5e8984c034833e77",
+      "ptx_sha256": "fd88e5bd5ce0aa74ce987f57841dcba021f7e7937b0cb03b034db7ad8684a988",
+      "capability_warnings": true
+    },
+    {
+      "name": "k11",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXR0",
+          "kind": "buffer",
+          "register": "t0",
+          "parameter_offset": 0
+        },
+        {
+          "binding": 2,
+          "name": "PXR1",
+          "kind": "buffer",
+          "register": "t1",
+          "parameter_offset": 8
+        },
+        {
+          "binding": 3,
+          "name": "PXR2",
+          "kind": "buffer",
+          "register": "t2",
+          "parameter_offset": 24
+        },
+        {
+          "binding": 4,
+          "name": "PXW3",
+          "kind": "buffer",
+          "register": "u0",
+          "parameter_offset": 16
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "k11-vulkan.hlsl": "e82e67e189086ac01b9bbce5dfdfb7b55ef8fd778dffee71fa642ad22434e55f",
+        "k11.hlsl": "1b30cbc7bed8254d7825c3d575a0cda3474cc8965c435200bf3c350fb40c9b06",
+        "k11_body.h": "2fc8a33b953d80ef77af39b558ed214a9a31cb2903a5c563e55529c0ab690137",
+        "k11_cfg.h": "8ae3a1ffc5f6b45ca2c4078b6395952e4ebbfc036d8625bd311959f07f849785"
+      },
+      "dxc_stderr": "build/main-inventory/generated/k11/k11-vulkan.hlsl:30:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "spirv_sha256": "fe606e17f9db11beeb35e28e489fb8aa5e76aaed6e27670a5e9f097a30b13b35",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 4604,
+          "metadata_version": 21,
+          "descriptors": 5,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 4604,
+          "adapter_descriptors": 5,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 80,
+          "user_sgprs": 3,
+          "lds_size": 20,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    52 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    28 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    52 bytes into the SPIR-V binary\n",
+      "source_sha256": "e82e67e189086ac01b9bbce5dfdfb7b55ef8fd778dffee71fa642ad22434e55f",
+      "ptx_sha256": "fa2bd82722da90bd73a2ce64f2cb9b88cda6c23a15ef1cc5c494ac893ed1b214",
+      "capability_warnings": true
+    },
+    {
+      "name": "k5",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXR0",
+          "kind": "buffer",
+          "register": "t0",
+          "parameter_offset": 0
+        },
+        {
+          "binding": 2,
+          "name": "PXR1",
+          "kind": "buffer",
+          "register": "t1",
+          "parameter_offset": 8
+        },
+        {
+          "binding": 3,
+          "name": "PXR2",
+          "kind": "buffer",
+          "register": "t2",
+          "parameter_offset": 16
+        },
+        {
+          "binding": 4,
+          "name": "PXR3",
+          "kind": "buffer",
+          "register": "t3",
+          "parameter_offset": 24
+        },
+        {
+          "binding": 5,
+          "name": "PXR4",
+          "kind": "buffer",
+          "register": "t4",
+          "parameter_offset": 240
+        },
+        {
+          "binding": 6,
+          "name": "PXR5",
+          "kind": "buffer",
+          "register": "t5",
+          "parameter_offset": 248
+        },
+        {
+          "binding": 7,
+          "name": "PXT0",
+          "kind": "sampled-image",
+          "register": "t6",
+          "parameter_offset": 472
+        },
+        {
+          "binding": 8,
+          "name": "PXS0",
+          "kind": "sampler",
+          "register": "s0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 9,
+          "name": "PXT1",
+          "kind": "sampled-image",
+          "register": "t7",
+          "parameter_offset": 456
+        },
+        {
+          "binding": 10,
+          "name": "PXT2",
+          "kind": "sampled-image",
+          "register": "t8",
+          "parameter_offset": 464
+        },
+        {
+          "binding": 11,
+          "name": "PXU0",
+          "kind": "storage-image",
+          "register": "u0",
+          "parameter_offset": 496,
+          "image_format": "rgba16f"
+        },
+        {
+          "binding": 12,
+          "name": "PXU1",
+          "kind": "storage-image",
+          "register": "u1",
+          "parameter_offset": 488,
+          "image_format": "rgba16f"
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "k5-vulkan.hlsl": "95ff5c73fa59e2a4137c7972418f538434baf94a175aed25e66e249b025c2b42",
+        "k5.hlsl": "64aa7dba5bc5704b0903f2f943420137cfdccdc93dda69c819d5b0ffdb1dd06f",
+        "k5_body.h": "7e9191501f82f8fcb23de143454020ada762e2d1540b2ee5d8f2d17973ace7c4",
+        "k5_cfg.h": "da9368db178eaa33b648da9684f74aa1df7823c720e412829fba516e98995e4f"
+      },
+      "dxc_stderr": "build/main-inventory/generated/k5/k5-vulkan.hlsl:39:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "spirv_sha256": "9dde5d530a26040c96bfac2c19d834acd7dab0e9b550aec41632dc9759ca509f",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 32240,
+          "metadata_version": 21,
+          "descriptors": 13,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 32240,
+          "adapter_descriptors": 13,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 128,
+          "user_sgprs": 3,
+          "lds_size": 32,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    52 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    76 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    52 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    76 bytes into the SPIR-V binary\n",
+      "source_sha256": "95ff5c73fa59e2a4137c7972418f538434baf94a175aed25e66e249b025c2b42",
+      "ptx_sha256": "187af6247c6c239c04789bf65f5c9fefebf96bf93f7b847f0a34a66fd77c8fa3",
+      "capability_warnings": true
+    },
+    {
+      "name": "k5f",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXR0",
+          "kind": "buffer",
+          "register": "t0",
+          "parameter_offset": 0
+        },
+        {
+          "binding": 2,
+          "name": "PXR1",
+          "kind": "buffer",
+          "register": "t1",
+          "parameter_offset": 8
+        },
+        {
+          "binding": 3,
+          "name": "PXR2",
+          "kind": "buffer",
+          "register": "t2",
+          "parameter_offset": 16
+        },
+        {
+          "binding": 4,
+          "name": "PXR3",
+          "kind": "buffer",
+          "register": "t3",
+          "parameter_offset": 24
+        },
+        {
+          "binding": 5,
+          "name": "PXR4",
+          "kind": "buffer",
+          "register": "t4",
+          "parameter_offset": 240
+        },
+        {
+          "binding": 6,
+          "name": "PXR5",
+          "kind": "buffer",
+          "register": "t5",
+          "parameter_offset": 248
+        },
+        {
+          "binding": 7,
+          "name": "PXT0",
+          "kind": "sampled-image",
+          "register": "t6",
+          "parameter_offset": 472
+        },
+        {
+          "binding": 8,
+          "name": "PXS0",
+          "kind": "sampler",
+          "register": "s0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 9,
+          "name": "PXT1",
+          "kind": "sampled-image",
+          "register": "t7",
+          "parameter_offset": 456
+        },
+        {
+          "binding": 10,
+          "name": "PXT2",
+          "kind": "sampled-image",
+          "register": "t8",
+          "parameter_offset": 464
+        },
+        {
+          "binding": 11,
+          "name": "PXU0",
+          "kind": "storage-image",
+          "register": "u0",
+          "parameter_offset": 496,
+          "image_format": "rgba16f"
+        },
+        {
+          "binding": 12,
+          "name": "PXU1",
+          "kind": "storage-image",
+          "register": "u1",
+          "parameter_offset": 488,
+          "image_format": "rgba16f"
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "k5f-vulkan.hlsl": "ba15369e5de3b4df2cf11462bbc9fe9c9418c5ef92077dbfd0e76de1b13a7042",
+        "k5f.hlsl": "9acd3f033ad088d2445d2b155b96d28da84bb459c57a265730e1d54a6f2114a9",
+        "k5f_body.h": "70de70f4f701cc55bf6ca4efefd9457bef17a1d7805e7bc10975092fda090675",
+        "k5f_cfg.h": "ea335aca1bb09f08b14cfb777a2f752dae4688fb3d46d71a2bf382726be4aeec"
+      },
+      "dxc_stderr": "build/main-inventory/generated/k5f/k5f-vulkan.hlsl:39:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "compile_strategy": "dxc-o3",
+      "spirv_sha256": "b8b5762889549e415691348c3dacd59800132a46df3c017645e863cdbc0c5757",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 31316,
+          "metadata_version": 21,
+          "descriptors": 13,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 31316,
+          "adapter_descriptors": 13,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 128,
+          "user_sgprs": 3,
+          "lds_size": 32,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    52 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    76 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    52 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    76 bytes into the SPIR-V binary\n",
+      "source_sha256": "ba15369e5de3b4df2cf11462bbc9fe9c9418c5ef92077dbfd0e76de1b13a7042",
+      "ptx_sha256": "247019f3124f500914150444b805cdf4e3267cdf062ae0452478eea7f7d88540",
+      "capability_warnings": true
+    },
+    {
+      "name": "k5n",
+      "success": true,
+      "bindings": [
+        {
+          "binding": 0,
+          "name": "PxArgs",
+          "kind": "uniform-buffer",
+          "register": "b0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 1,
+          "name": "PXR0",
+          "kind": "buffer",
+          "register": "t0",
+          "parameter_offset": 0
+        },
+        {
+          "binding": 2,
+          "name": "PXR1",
+          "kind": "buffer",
+          "register": "t1",
+          "parameter_offset": 8
+        },
+        {
+          "binding": 3,
+          "name": "PXR2",
+          "kind": "buffer",
+          "register": "t2",
+          "parameter_offset": 16
+        },
+        {
+          "binding": 4,
+          "name": "PXR3",
+          "kind": "buffer",
+          "register": "t3",
+          "parameter_offset": 24
+        },
+        {
+          "binding": 5,
+          "name": "PXR4",
+          "kind": "buffer",
+          "register": "t4",
+          "parameter_offset": 240
+        },
+        {
+          "binding": 6,
+          "name": "PXR5",
+          "kind": "buffer",
+          "register": "t5",
+          "parameter_offset": 248
+        },
+        {
+          "binding": 7,
+          "name": "PXT0",
+          "kind": "sampled-image",
+          "register": "t6",
+          "parameter_offset": 472
+        },
+        {
+          "binding": 8,
+          "name": "PXS0",
+          "kind": "sampler",
+          "register": "s0",
+          "parameter_offset": null
+        },
+        {
+          "binding": 9,
+          "name": "PXT1",
+          "kind": "sampled-image",
+          "register": "t7",
+          "parameter_offset": 456
+        },
+        {
+          "binding": 10,
+          "name": "PXT2",
+          "kind": "sampled-image",
+          "register": "t8",
+          "parameter_offset": 464
+        },
+        {
+          "binding": 11,
+          "name": "PXU0",
+          "kind": "storage-image",
+          "register": "u0",
+          "parameter_offset": 496,
+          "image_format": "rgba16f"
+        },
+        {
+          "binding": 12,
+          "name": "PXU1",
+          "kind": "storage-image",
+          "register": "u1",
+          "parameter_offset": 488,
+          "image_format": "rgba16f"
+        }
+      ],
+      "required_subgroup_size": 32,
+      "generated_source_hashes": {
+        "k5n-vulkan.hlsl": "c2225b2337a8364c08a93fa13f4d04c1b3d9173f76d8733143884f4d818cc427",
+        "k5n.hlsl": "468b4f47e2b3b4750d009d05100b997ae1a9ace42b8298f6d8fe5fcb65f3977e",
+        "k5n_body.h": "7d92be408f586151b5c3394f04c47da1710b800a00aa6beb20f27d8857961017",
+        "k5n_cfg.h": "dda4c8e6bc455b51ff195ea50db85e657b648b9253333f31fcd7f15b1f8822ea"
+      },
+      "dxc_stderr": "",
+      "compile_strategy": "dxc-fcgl-external-minimal-legalization",
+      "dxc_o3_returncode": -11,
+      "legalization_passes": [
+        "compact-ids",
+        "fix-storage-class",
+        "eliminate-dead-functions",
+        "trim-capabilities",
+        "compact-ids"
+      ],
+      "dxc_fcgl_stderr": "build/main-inventory/generated/k5n/k5n-vulkan.hlsl:39:2: warning: Wave size is not supported by Vulkan SPIR-V. Consider using VK_EXT_subgroup_size_control.\n[WaveSize(32)]\n ^\n\n",
+      "spirv_sha256": "93dd3be324ed5896898af24bba4317c152a7aa97ccbbc1664e599008c53da2fa",
+      "native": [
+        {
+          "result": "success",
+          "code_bytes": 111564,
+          "metadata_version": 21,
+          "descriptors": 13,
+          "used_sets": 1,
+          "scratch_bytes_per_wave": 0,
+          "scratch_bytes_per_thread": 0,
+          "scratch_valid": false
+        },
+        {
+          "adapter_result": 0,
+          "adapter_code_bytes": 111564,
+          "adapter_descriptors": 13,
+          "adapter_push_bytes": 0,
+          "wave_size": 32,
+          "vgprs": 256,
+          "user_sgprs": 3,
+          "lds_size": 48,
+          "scratch": 0
+        }
+      ],
+      "native_stderr": "SPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    52 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    76 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityComputeDerivativeGroupLinearKHR (5350)\n    20 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniform (61)\n    36 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityInt64 (11)\n    44 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityFloat16 (9)\n    52 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformShuffle (65)\n    68 bytes into the SPIR-V binary\nSPIR-V WARNING:\n    In file src/compiler/spirv/spirv_to_nir.c:5650\n    Unsupported SPIR-V capability: SpvCapabilityGroupNonUniformQuad (68)\n    76 bytes into the SPIR-V binary\n",
+      "source_sha256": "c2225b2337a8364c08a93fa13f4d04c1b3d9173f76d8733143884f4d818cc427",
+      "ptx_sha256": "a1908254e755436dd1aa16026971d991c5805e3f417a1a7c90c70b667f3c60fa",
+      "capability_warnings": true
+    }
+  ],
+  "scope": "generation, SPIR-V validation and native compilation only; no execution qualification"
+}
