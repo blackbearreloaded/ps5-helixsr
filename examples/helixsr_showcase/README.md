@@ -238,10 +238,10 @@ frames) and saves the last frame as `helixsr-showcase-keys.bgra`.
 
 ## Launch assets
 
-`sce_sys/` holds the selection music of the FSR4 showcase. The icon and the two
-backgrounds are the native app template's until artwork is made for this app:
-`icon0.png` (512×512 PNG), `pic0.dds` and `pic1.dds` (3840×2160 BC7 DDS with a
-DX10 header) placed there replace them.
+`sce_sys/` holds the app's own icon and backgrounds, by BlackBearReloaded:
+`icon0.png` (512×512 PNG), `pic0.dds` (home screen background) and `pic1.dds`
+(the picture shown while the app starts), both 3840×2160 BC7 DDS with a DX10
+header. The selection music is the FSR4 showcase's.
 
 The HUD and the signs use DejaVu Sans, rasterized at build time from the system
 font (`fonts-dejavu-core`) under the Bitstream Vera license.
