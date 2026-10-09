@@ -174,6 +174,8 @@ has there. The benchmark reads 16.48 ms in every scenario on that system
 software, because it measures the wait for the display, not the network.
 Everything else worked: the shaders compiled (36 s the first time), every
 scenario and context ran, the pad was read, and the app left by itself.
+A second launch read the saved pipeline cache and built its first context in
+0.1 s, with the same frame times.
 
 If the GPU fails, the app writes the failing stage to its log and returns to
 the home screen.
