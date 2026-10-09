@@ -154,23 +154,26 @@ eye on a television has not been part of any run.
 | System software | Result |
 | --- | --- |
 | 13.x | 60 fps in every scenario; the numbers above |
-| 10.x | Ran at 14 fps; the correction below has not been run there |
+| 10.x | About 27 fps in every scenario (two display refreshes a frame); the benchmark's numbers are not valid there |
 
 System software 10 completes a GPU submission only at the next display
 refresh. The app, like the FSR4 showcase, probes for that when it starts, with
-a few tiny dispatches, and then sends the whole frame as one submission, which
-leaves two refreshes a frame (about 28 fps). On the one console with system
-software 10 where the self-test ran, the probe came back in 1.2 ms, so the app
-kept its three submissions a frame, and each took 16.4 ms: 70 ms a frame, and
-a benchmark that reads 16.48 ms in every scenario because it measures the
-wait. Everything else worked there: the shaders compiled, every scenario and
-context ran, the pad was read.
+a few tiny dispatches, and then sends the whole frame as one submission. On
+the one console with system software 10 where the self-test ran, the probe
+came back in 1.2 ms and missed it, so the app kept its three submissions a
+frame, each took 16.4 ms, and it ran at 14 fps.
 
-The app now also watches its own frames: composing the display frame takes
-under 2 ms, so when it takes more than 12 ms eight frames in a row the
+The app therefore also watches its own frames: composing the display frame
+takes under 2 ms, so when it takes more than 12 ms eight frames in a row the
 submissions are waiting for the display, and the app switches to one
 submission a frame and logs it. On system software 13 this never triggers
-(checked); on system software 10 it has not been run.
+(checked). On system software 10 it triggered at the seventh frame of the
+self-test, and the frame went from 70 ms to 35 to 41 ms; the owner saw 24 to
+30 fps on the television. That is the same two-refresh limit the FSR4 showcase
+has there. The benchmark reads 16.48 ms in every scenario on that system
+software, because it measures the wait for the display, not the network.
+Everything else worked: the shaders compiled (36 s the first time), every
+scenario and context ran, the pad was read, and the app left by itself.
 
 If the GPU fails, the app writes the failing stage to its log and returns to
 the home screen.
