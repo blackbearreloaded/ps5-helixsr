@@ -57,4 +57,12 @@ for chart in ("cases-light.svg", "cases-dark.svg"):
     theme = build_perf_charts.THEMES[chart[6:-4]]
     assert (ROOT / "docs/perf" / chart).read_text(encoding="utf-8") == build_perf_charts.cases_chart(theme), \
         f"docs/perf/{chart} is stale: run tools/build_perf_charts.py"
+assert len(build_perf_charts.accuracy_rows()) == 24, "VALIDATION.md's results table changed shape"
+for chart in ("accuracy-light.svg", "accuracy-dark.svg"):
+    theme = build_perf_charts.THEMES[chart[9:-4]]
+    assert (ROOT / "docs/perf" / chart).read_text(encoding="utf-8") == build_perf_charts.accuracy_chart(theme), \
+        f"docs/perf/{chart} is stale: run tools/build_perf_charts.py"
+for image in ("ps5-helixsr-showcase", "showcase-reading", "showcase-tower", "showcase-menu", "showcase-benchmark",
+              "showcase-4k"):
+    assert (ROOT / "docs/images" / f"{image}.png").is_file(), image
 print("showcase tables: 6 scenarios, 10 chapters, documents and chart agree")

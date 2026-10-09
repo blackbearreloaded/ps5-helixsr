@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # Copyright (C) 2026 BlackBearReloaded
 # SPDX-License-Identifier: GPL-3.0-or-later
-"""Draw the README's performance chart as SVG, in light and dark variants.
+"""Draw the README's performance and accuracy charts as SVG, in light and dark variants.
 
 The numbers are PS5 measurements recorded below: HelixSR's come from the showcase's own
 benchmark (examples/helixsr_showcase, the mean of 300 frames submitted back to back, each
 timed from submission to completion on the GPU), FSR 4's from the README of ps5-fsr4 (its
 headless benchmark, measured the same way). Update them here and rerun after a new measurement.
+The accuracy chart is drawn from the results table of VALIDATION.md.
 """
 import argparse
 from pathlib import Path
@@ -108,6 +109,56 @@ def cases_chart(theme):
     return svg.source()
 
 
+def accuracy_rows():
+    """(scenario, render → output, lowest PS5 dB, lowest host dB, PS5 against host dB) from VALIDATION.md."""
+    rows = []
+    for line in (ROOT / "VALIDATION.md").read_text(encoding="utf-8").splitlines():
+        cells = [cell.strip() for cell in line.strip("|").split("|")]
+        if len(cells) == 8 and cells[7] in ("accepted", "not accepted") and "→" in cells[1]:
+            rows.append((cells[0], cells[1], float(cells[4].split("–")[0]), float(cells[5].split("–")[0]),
+                         float(cells[6])))
+    return rows
+
+
+def accuracy_chart(theme):
+    rows = accuracy_rows()
+    width, left, right, row, gap = 820, 262, 770, 30, 10
+    sizes = {"s": "960×540", "t": "1920×1080", "k2": "2560×1440", "k4": "3840×2160"}
+    colors = dict(theme["outputs"], **{"960×540": theme["muted"]})
+    top = 96
+    groups = len({name.split("-")[0] for name, *_ in rows})
+    bottom = top + row * len(rows) + gap * (groups - 1)
+    title = "HelixSR on the PS5 against the original HelixSR: PSNR of the worst frame of each scenario"
+    svg = Svg(width, bottom + 34, title)
+    svg.text(16, 26, "HelixSR on the PS5: closeness to the original", 17, theme["text"], weight="600")
+    svg.text(16, 46, "PSNR of each scenario's worst frame against the original HelixSR, in dB (higher is closer)",
+             12, theme["muted"])
+    x = 16
+    for output in sizes.values():
+        svg.rect(x, 60, 12, 12, colors[output])
+        svg.text(x + 18, 70.5, f"{output} output", 12, theme["text"])
+        x += 142
+    svg.rect(x, 62, 12, 8, theme["other"])
+    svg.text(x + 18, 70.5, "the same runtime on a PC", 12, theme["muted"])
+    scale = axis(svg, theme, left, right, top - 8, bottom, 80, 10, "dB")
+    y, previous = top, rows[0][0].split("-")[0]
+    for name, sizes_text, ps5, host, against in rows:
+        group = name.split("-")[0]
+        if group != previous:
+            y += gap
+            previous = group
+        svg.text(left - 12, y + 12, name, 12, theme["text"], "end", "600")
+        svg.text(left - 12, y + 24, sizes_text, 10, theme["muted"], "end")
+        svg.rect(left, y + 3, ps5 * scale, 13, colors[sizes[group]])
+        svg.text(left + ps5 * scale + 6, y + 14, f"{ps5:.1f} dB", 11, theme["text"], weight="600",
+                 halo=theme["background"])
+        svg.rect(left, y + 19, host * scale, 5, theme["other"])
+        svg.text(right + 44, y + 14, f"{against:.1f}", 11, theme["muted"], "end")
+        y += row
+    svg.text(right + 44, top - 14, "PS5 against PC", 10.5, theme["muted"], "end")
+    return svg.source()
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--out", type=Path, default=ROOT / "docs/perf")
@@ -116,6 +167,8 @@ def main():
     for name, theme in THEMES.items():
         (args.out / f"cases-{name}.svg").write_text(cases_chart(theme), encoding="utf-8")
         print(args.out / f"cases-{name}.svg")
+        (args.out / f"accuracy-{name}.svg").write_text(accuracy_chart(theme), encoding="utf-8")
+        print(args.out / f"accuracy-{name}.svg")
 
 
 if __name__ == "__main__":

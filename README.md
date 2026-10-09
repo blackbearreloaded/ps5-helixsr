@@ -86,8 +86,44 @@ form ([the early stages](docs/EARLY_STAGES.md)).
 The first context on a console compiles the network's shaders, which takes 36
 seconds; with the pipeline cache it then saves, a context is made in 50 ms.
 
-`tools/build_perf_charts.py` draws the chart from the measurements recorded in
-it.
+## Accuracy
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/perf/accuracy-dark.svg">
+  <img alt="PSNR of the worst frame of each of the 24 validation scenarios against the original HelixSR, for the PS5 and for the same runtime on a PC" src="docs/perf/accuracy-light.svg">
+</picture>
+
+The PS5's output is compared with the original HelixSR's, frame by frame, in
+24 scenarios: every ratio from 1× to 3×, output sizes up to 4K, motion, a
+camera cut, HDR values and automatic exposure. In each one the console is as
+close to the original as the same runtime is on a PC with a conformant Vulkan
+driver (the thin bars), and the two agree with each other to 65 dB or better
+(the right column; [VALIDATION.md](VALIDATION.md)).
+
+`tools/build_perf_charts.py` draws both charts: the first from the
+measurements recorded in it, the second from the table of VALIDATION.md.
+
+## Before and after
+
+![Captured on a PS5: HelixSR beside a bilinear upscale of the same 1280×720 frame, with a 4× lens on small print](docs/images/showcase-reading.png)
+
+*Captured on a PS5: the showcase draws the city at 1280×720 and shows HelixSR's
+1920×1080 frame on the left, a bilinear upscale of the same frame on the
+right. The lens magnifies the same small print four times on both sides.*
+
+![Captured on a PS5: HelixSR beside native 1920×1080 rendering without anti-aliasing, with a 4× lens on the tower's lattice](docs/images/showcase-tower.png)
+
+*Against native rendering: HelixSR from 1280×720 on the left, the scene drawn
+at the full 1920×1080 with one sample a pixel on the right. HelixSR's 2.1 ms
+replace the stair-steps with the edges the scene has.*
+
+| | |
+| --- | --- |
+| ![The settings menu](docs/images/showcase-menu.png) | ![The benchmark of the six scenarios on the console](docs/images/showcase-benchmark.png) |
+| *The settings: scenario, output size, quality mode, comparison, lens, camera.* | *The benchmark times the six cases of the table above on the console it runs on.* |
+
+More frames, and what each setting does, are in the
+[showcase's README](examples/helixsr_showcase/README.md).
 
 ## How it works
 

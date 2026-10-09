@@ -14,6 +14,18 @@ with the upscaler replaced: the same scene, camera shots, menu and benchmark,
 so the two can be set side by side. What FSR 4 has and HelixSR has not, RCAS
 sharpening and a render size that changes every frame, is gone from the menu.
 
+| | |
+| --- | --- |
+| ![HelixSR beside a bilinear upscale, with the lens on small print](../../docs/images/showcase-reading.png) | ![HelixSR beside native rendering without anti-aliasing, with the lens on the tower](../../docs/images/showcase-tower.png) |
+| *HelixSR and bilinear, both from 1280×720, lens 4×* | *HelixSR from 1280×720 and native 1920×1080 without anti-aliasing* |
+| ![The settings menu](../../docs/images/showcase-menu.png) | ![The benchmark of the six scenarios](../../docs/images/showcase-benchmark.png) |
+| *The settings* | *The benchmark of the six scenarios* |
+| ![The street shot at 1920×1080 to 3840×2160](../../docs/images/showcase-4k.png) | |
+| *Performance 2×: 1920×1080 → 3840×2160 in 5.4 ms at 60 fps* | |
+
+All of them are frames of the app's self-test on a PS5, saved from the buffer
+it presents.
+
 ## The network is not in the app
 
 HelixSR runs NVIDIA's DLSS Model E network, and both its weights and its
